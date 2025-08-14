@@ -1,0 +1,49 @@
+@use "sass:color";
+@use "variables" as v;
+.aboutuspage {
+  padding: 40px;
+
+  .aboutuspage {
+  h1, h2, h3 {
+    font-family: "plotfont", serif;
+  }
+}
+  .aboutus-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+
+    .aboutus-intro {
+      margin-bottom: 50px;
+
+      .aboutus-content {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        img {
+          max-width: 250px;
+          width: 100%;
+          height: auto;
+          border-radius: 12px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .aboutus-text {
+          flex: 1;
+        }
+      }
+    }
+  }
+//Cel
+  @media (max-width: 768px) {
+    .aboutus-content {
+      flex-direction: column;
+      text-align: center;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}

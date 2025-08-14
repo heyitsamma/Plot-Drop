@@ -1,0 +1,26 @@
+@use "variables" as v;
+
+footer {
+  color: #9C5C55;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  // Solo en cel hay un gap extra para que los botones no tapen el texto
+  @media (max-width: 768px) {
+    padding-bottom: 90px; // la altura de los botones maso
+  }
+}
+
+.social-media {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 40px;
+    height: auto;
+  }
+}
+

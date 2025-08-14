@@ -1,0 +1,57 @@
+@use "variables" as v;
+
+body {
+  background-color: v.$color-bg;
+  font-size: 16px;
+}
+
+h1 {
+  color: v.$color-text;
+  font-size: 40px;
+  font-family: "plotfont", serif;
+  text-align: start;
+}
+
+p {
+  color: #4A3B36;
+  font-family: v.$font-main;
+  text-align: justify;
+  white-space: pre-line;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.home-description {
+  display: flex;
+  align-content: center;
+}
+
+.center-video iframe {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  color: v.$color-secondary;
+}
+
+.tagline {
+  font-weight: 400;
+  font-size: 2.1rem;
+  margin: 0;
+}
+
+.subtitle {
+  color: v.$color-secondary;
+}
+
+ol,
+ul {
+  color: v.$color-accent;
+  text-decoration: none;
+}
+
+.steps {
+  list-style-type: upper-roman;
+}

@@ -1,0 +1,48 @@
+@use "sass:color";
+@use "variables" as v;
+
+.commission-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  .commission-text {
+    background-color: v.$color-bg;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      margin-bottom: 20px;
+      color: v.$color-text;
+      text-align: center;
+    }
+
+    p {
+      line-height: 1.6;
+      color: v.$color-text;
+      text-align: justify;
+    }
+  }
+}
+
+// cel
+@media (max-width: 768px) {
+  .commission-container {
+    padding: 20px 15px;
+
+    .commission-text {
+      padding: 20px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .commission-container {
+    padding: 15px 10px;
+
+    .commission-text {
+      padding: 15px;
+    }
+  }
+}

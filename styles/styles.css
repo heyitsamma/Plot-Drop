@@ -1,0 +1,314 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "plotfont";
+  src: url(../Media/PlayfairDisplay-Italic-VariableFont_wght.ttf);
+}
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+  flex-wrap: wrap;
+}
+.main-header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 250px;
+}
+.main-header .header-left .logo-div {
+  flex-shrink: 0;
+}
+.main-header .header-left .logo-div .logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+.main-header .header-left .site-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+.main-header .header-left .site-text .site-title {
+  margin: 0;
+  white-space: nowrap;
+  font-family: "plotfont", serif;
+  font-size: 40px;
+  color: #3A1E1E;
+}
+
+/* navegación fija a la derecha */
+.our-links {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+.our-links a {
+  background-color: #EADDC8;
+  color: #3A1E1E;
+  text-decoration: underline;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 4px 8px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+.our-links a:hover {
+  background-color: rgb(241, 232, 218);
+  transform: translateY(-2px);
+}
+@media (max-width: 768px) {
+  .our-links {
+    flex-direction: row;
+    bottom: 20px;
+    top: auto;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .our-links a {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 50px;
+  }
+}
+
+body {
+  background-color: #EADDC8;
+  font-size: 16px;
+}
+
+h1 {
+  color: #3A1E1E;
+  font-size: 40px;
+  font-family: "plotfont", serif;
+  text-align: start;
+}
+
+p {
+  color: #4A3B36;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: justify;
+  white-space: pre-line;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.home-description {
+  display: flex;
+  align-content: center;
+}
+
+.center-video iframe {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  color: #5C3C34;
+}
+
+.tagline {
+  font-weight: 400;
+  font-size: 2.1rem;
+  margin: 0;
+}
+
+.subtitle {
+  color: #5C3C34;
+}
+
+ol,
+ul {
+  color: #9C5C55;
+  text-decoration: none;
+}
+
+.steps {
+  list-style-type: upper-roman;
+}
+
+.contactuspage {
+  display: grid;
+  place-items: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+.contactuspage form {
+  display: grid;
+  gap: 15px;
+  background-color: #EADDC8;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+}
+@media (min-width: 768px) {
+  .contactuspage form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.contactuspage form label {
+  font-weight: bold;
+  color: #3A1E1E;
+  margin-bottom: 5px;
+}
+.contactuspage form input,
+.contactuspage form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgb(180, 111, 111);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  resize: vertical;
+}
+.contactuspage form button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #5C3C34;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.contactuspage form button:hover {
+  background-color: rgb(59, 39, 34);
+}
+.contactuspage form textarea,
+.contactuspage form button {
+  grid-column: 1/-1;
+}
+
+.commission-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+.commission-container .commission-text {
+  background-color: #EADDC8;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.commission-container .commission-text h2 {
+  margin-bottom: 20px;
+  color: #3A1E1E;
+  text-align: center;
+}
+.commission-container .commission-text p {
+  line-height: 1.6;
+  color: #3A1E1E;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .commission-container {
+    padding: 20px 15px;
+  }
+  .commission-container .commission-text {
+    padding: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .commission-container {
+    padding: 15px 10px;
+  }
+  .commission-container .commission-text {
+    padding: 15px;
+  }
+}
+.gallerypage {
+  padding: 20px;
+}
+.gallerypage .gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.gallerypage .gallery-container img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.gallerypage .gallery-container img:hover {
+  transform: scale(1.05) rotate(1deg);
+}
+
+footer {
+  color: #9C5C55;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  footer {
+    padding-bottom: 90px;
+  }
+}
+
+.social-media {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.social-media img {
+  width: 40px;
+  height: auto;
+}
+
+.aboutuspage {
+  padding: 40px;
+}
+.aboutuspage .aboutuspage h1, .aboutuspage .aboutuspage h2, .aboutuspage .aboutuspage h3 {
+  font-family: "plotfont", serif;
+}
+.aboutuspage .aboutus-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.aboutuspage .aboutus-container .aboutus-intro {
+  margin-bottom: 50px;
+}
+.aboutuspage .aboutus-container .aboutus-intro .aboutus-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.aboutuspage .aboutus-container .aboutus-intro .aboutus-content img {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.aboutuspage .aboutus-container .aboutus-intro .aboutus-content .aboutus-text {
+  flex: 1;
+}
+@media (max-width: 768px) {
+  .aboutuspage .aboutus-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .aboutuspage .aboutus-content img {
+    max-width: 100%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,86 @@
+@use "variables" as v;
+
+.main-header {
+  display: flex;
+  justify-content: space-between; // izquierda: logo+título / derecha: nav
+  align-items: center;
+  padding: 25px 40px;
+  flex-wrap: wrap;
+
+  .header-left {
+    display: flex;
+    align-items: center; // centra verticalmente logo y texto
+    gap: 15px;
+    min-width: 250px;
+
+    .logo-div {
+      flex-shrink: 0;
+
+      .logo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    .site-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+
+      .site-title {
+        margin: 0;
+        white-space: nowrap;
+        font-family: "plotfont", serif;
+        font-size: 40px;
+        color: #3A1E1E;
+      }
+    }
+  }
+}
+
+/* navegación fija a la derecha */
+.our-links {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+
+  a {
+    background-color: #EADDC8;
+    color: #3A1E1E;
+    text-decoration: underline;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 4px 8px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    width: fit-content;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgb(241, 232, 218);
+      transform: translateY(-2px);
+    }
+  }
+
+  // para el cel sería algo así
+  @media (max-width: 768px) {
+    flex-direction: row;
+    bottom: 20px;
+    top: auto;
+    right: 50%;
+    transform: translateX(50%);
+
+    a {
+      padding: 8px 12px;
+      font-size: 14px;
+      border-radius: 50px; // más redondos
+    }
+  }
+}

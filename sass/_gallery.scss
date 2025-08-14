@@ -1,0 +1,26 @@
+@use "variables" as v;
+
+.gallerypage {
+  padding: 20px;
+
+  .gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+      &:hover {
+        transform: scale(1.05) rotate(1deg);
+      }
+    }
+  }
+}
