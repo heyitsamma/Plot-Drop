@@ -2,13 +2,19 @@
 
 .gallerypage {
   padding: 20px;
+  text-align: center; // para centrar el título dentro de la página
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center; // asegura que el título de "Gallery" quede centrado
+  }
 
   .gallery-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // 3 columnas
     gap: 20px;
-    flex-wrap: wrap;
+    justify-items: center; // centra las imágenes dentro de cada celda
 
     img {
       width: 150px;

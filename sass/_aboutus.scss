@@ -1,13 +1,15 @@
 @use "sass:color";
 @use "variables" as v;
-.aboutuspage {
-  padding: 40px;
 
-  .aboutuspage {
-  h1, h2, h3 {
-    font-family: "plotfont", serif;
-  }
+@font-face {
+  font-family: "PlotFont";
+  src: url("../media/PlayfairDisplay-Italic-VariableFont_wght.ttf") format("truetype");
 }
+.aboutuspage {
+  padding: 40px;}
+  h1, h2, h3 {
+    font-family: "PlotFont", serif;
+  }
   .aboutus-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -31,6 +33,7 @@
 
         .aboutus-text {
           flex: 1;
+          font-family: "PlotFont",serif;
         }
       }
     }
@@ -46,4 +49,3 @@
       }
     }
   }
-}

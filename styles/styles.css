@@ -1,7 +1,6 @@
-@charset "UTF-8";
 @font-face {
   font-family: "plotfont";
-  src: url(../Media/PlayfairDisplay-Italic-VariableFont_wght.ttf);
+  src: url("../media/PlayfairDisplay-Italic-VariableFont_wght.ttf");
 }
 .main-header {
   display: flex;
@@ -40,7 +39,6 @@
   color: #3A1E1E;
 }
 
-/* navegación fija a la derecha */
 .our-links {
   position: fixed;
   top: 20px;
@@ -189,28 +187,95 @@ ul {
   grid-column: 1/-1;
 }
 
+@font-face {
+  font-family: "PlotFont";
+  src: url("../media/PlayfairDisplay-Italic-VariableFont_wght.ttf") format("truetype");
+}
 .commission-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
+  font-family: Arial, sans-serif;
 }
 .commission-container .commission-text {
   background-color: #EADDC8;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeSlideIn 1s ease forwards;
 }
 .commission-container .commission-text h2 {
   margin-bottom: 20px;
   color: #3A1E1E;
   text-align: center;
+  font-family: "PlotFont", serif;
 }
-.commission-container .commission-text p {
-  line-height: 1.6;
+.commission-container .commission-text .cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+.commission-container .commission-text .cards-container .card {
+  background-color: rgb(236.1, 224.4, 205.5);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  animation: scaleIn 0.8s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.commission-container .commission-text .cards-container .card h3 {
   color: #3A1E1E;
-  text-align: justify;
+  font-family: "PlotFont", serif;
+  margin-bottom: 10px;
+}
+.commission-container .commission-text .cards-container .card p {
+  color: #3A1E1E;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+.commission-container .commission-text .cards-container .card button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #6A1B2D;
+  color: white;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.commission-container .commission-text .cards-container .card button:hover {
+  background-color: rgb(95.4, 24.3, 40.5);
+  transform: scale(1.05);
+}
+.commission-container .commission-text .cards-container .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 @media (max-width: 768px) {
   .commission-container {
     padding: 20px 15px;
@@ -229,13 +294,18 @@ ul {
 }
 .gallerypage {
   padding: 20px;
+  text-align: center;
+}
+.gallerypage h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
 }
 .gallerypage .gallery-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  flex-wrap: wrap;
+  justify-items: center;
 }
 .gallerypage .gallery-container img {
   width: 150px;
@@ -272,41 +342,49 @@ footer {
   height: auto;
 }
 
+@font-face {
+  font-family: "PlotFont";
+  src: url("../media/PlayfairDisplay-Italic-VariableFont_wght.ttf") format("truetype");
+}
 .aboutuspage {
   padding: 40px;
 }
-.aboutuspage .aboutuspage h1, .aboutuspage .aboutuspage h2, .aboutuspage .aboutuspage h3 {
-  font-family: "plotfont", serif;
+
+h1, h2, h3 {
+  font-family: "PlotFont", serif;
 }
-.aboutuspage .aboutus-container {
+
+.aboutus-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
 }
-.aboutuspage .aboutus-container .aboutus-intro {
+.aboutus-container .aboutus-intro {
   margin-bottom: 50px;
 }
-.aboutuspage .aboutus-container .aboutus-intro .aboutus-content {
+.aboutus-container .aboutus-intro .aboutus-content {
   display: flex;
   align-items: center;
   gap: 30px;
 }
-.aboutuspage .aboutus-container .aboutus-intro .aboutus-content img {
+.aboutus-container .aboutus-intro .aboutus-content img {
   max-width: 250px;
   width: 100%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
-.aboutuspage .aboutus-container .aboutus-intro .aboutus-content .aboutus-text {
+.aboutus-container .aboutus-intro .aboutus-content .aboutus-text {
   flex: 1;
+  font-family: "PlotFont", serif;
 }
+
 @media (max-width: 768px) {
-  .aboutuspage .aboutus-content {
+  .aboutus-content {
     flex-direction: column;
     text-align: center;
   }
-  .aboutuspage .aboutus-content img {
+  .aboutus-content img {
     max-width: 100%;
   }
 }
