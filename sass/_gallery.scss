@@ -1,31 +1,78 @@
 @use "variables" as v;
-
 .gallerypage {
   padding: 20px;
-  text-align: center; // para centrar el título dentro de la página
-
+  text-align: center;
   h1 {
     font-size: 2rem;
     margin-bottom: 20px;
-    text-align: center; // asegura que el título de "Gallery" quede centrado
   }
-
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+  }
   .gallery-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); // 3 columnas
-    gap: 20px;
-    justify-items: center; // centra las imágenes dentro de cada celda
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    .side-img {
+      display: inline-block;
+      margin: 0 5px;
+      img {
+        width: 100%;
+        max-width: 280px;;
+        height: auto;
+        border-radius: 12px;
+        object-fit: cover;
+        transition: transform 0.3s ease, width 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      }
+      img:hover {
+        transform: scale(1.2) rotate(var(--rotate, 0deg));
+        z-index: 20;
+      }
+    }
 
-    img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 12px;
-      transition: transform 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    //abanico
+    .imgl3 { --rotate: -35deg; }
+    .imgl2 { --rotate: -20deg; }
+    .imgl1 { --rotate: -10deg; }
+    .imgr1 { --rotate: 10deg; }
+    .imgr2 { --rotate: 20deg; }
+    .imgr3 { --rotate: 35deg; }
 
-      &:hover {
-        transform: scale(1.05) rotate(1deg);
+    .center-img {
+      margin: 0 10px;
+
+      iframe {
+        border-radius: 10px;
+        width: 250px;
+        height: 175px;
+        z-index: 10;
+      }
+    }
+  }
+  //Cel
+  @media (max-width: 768px) {
+    .gallery-container {
+      flex-direction: column;
+      .side-img {
+        display: block !important;
+        margin: 10px 0;
+
+        img {
+          transform: none !important;
+          width: 65%;}
+        img:hover {
+        transform: scale(1.2) rotate(var(--rotate, 0deg));
+      }
+        }
+        
+      .center-img iframe {
+        width: 90%;
+        margin: 10px auto;
+        transform: none;
       }
     }
   }

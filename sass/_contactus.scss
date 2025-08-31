@@ -1,6 +1,5 @@
 @use "sass:color";
 @use "variables" as v;
-
 .contactuspage {
   display: grid;
   place-items: center;
@@ -51,8 +50,6 @@
       background-color: rgb(59, 39, 34);
     }
   }
-
-  // Para que el botón y textarea ocupen todo el ancho
   textarea,
   button {
     grid-column: 1 / -1;

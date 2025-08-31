@@ -2,18 +2,20 @@
 
 .main-header {
   display: flex;
-  justify-content: space-between; // izquierda: logo+título / derecha: nav
+  justify-content: space-between;
   align-items: center;
   padding: 25px 40px;
   flex-wrap: wrap;
 
   .header-left {
     display: flex;
-    align-items: center; // centra verticalmente logo y texto
+    align-items: center;
     gap: 15px;
     min-width: 250px;
+
     .logo-div {
       flex-shrink: 0;
+
       .logo {
         width: 120px;
         height: 120px;
@@ -22,11 +24,13 @@
         display: block;
       }
     }
+
     .site-text {
       display: flex;
       flex-direction: column;
       justify-content: center;
       text-align: left;
+
       .site-title {
         margin: 0;
         white-space: nowrap;
@@ -37,7 +41,8 @@
     }
   }
 }
-// /nav a la derecha?
+
+// 🔗 Links de navegación
 .our-links {
   position: fixed;
   top: 20px;
@@ -64,18 +69,26 @@
     }
   }
 
-  // para el cel sería algo así
+  // 📱 Ajustes en móvil
   @media (max-width: 768px) {
-    flex-direction: row;
+    position: fixed;
     bottom: 20px;
     top: auto;
-    right: 50%;
-    transform: translateX(50%);
+    left: 50%;              // 👉 centramos desde la izquierda
+    transform: translateX(-50%); // 👉 lo movemos al centro
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 15px;        // espacio interno para que no se pegue a los bordes
+    width: 90%;             // 👉 asegura que nunca choque con el borde del viewport
+    max-width: 500px;       // opcional: no se estira demasiado
 
     a {
-      padding: 8px 12px;
+      flex: 1;              // 👉 los botones ocupan espacio parejo
+      text-align: center;
+      padding: 10px;
       font-size: 14px;
-      border-radius: 50px; // más redondos
+      border-radius: 50px;
     }
   }
 }
